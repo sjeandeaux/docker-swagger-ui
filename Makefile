@@ -26,3 +26,6 @@ run:
 	docker run -d --name $(littleName) $(publish) $(tag)
 run-ti:
 	docker run -ti --name $(littleName) $(publish) $(tag)
+
+open:
+	open http://$(host):8888/swagger-ui
