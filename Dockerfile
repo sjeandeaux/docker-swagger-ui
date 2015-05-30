@@ -1,16 +1,16 @@
 FROM node:0.10
 
-RUN npm update npm 
-RUN npm install http-server
+RUN npm update npm &&\
+    npm install http-server
 
 
 RUN mkdir -p /tmp/swagger
 ADD https://github.com/swagger-api/swagger-ui/archive/v2.1.0-M2.tar.gz /tmp/swagger/swaggerui.tar.gz
 RUN tar --strip-components 1 -C /tmp/swagger -xzf /tmp/swagger/swaggerui.tar.gz 
 
-RUN mkdir -p /swaggerui/dist
-RUN mv /tmp/swagger/dist/* /swaggerui/dist
-RUN rm -rf /tmp/swagger
+RUN mkdir -p /swaggerui/dist/swagger-ui &&\
+    mv /tmp/swagger/dist/* /swaggerui/dist/swagger-ui &&\
+    rm -rf /tmp/swagger
 
 RUN echo "'use strict';\
 var path = require('path');\
