@@ -1,5 +1,11 @@
 # docker-swagger-ui
 
+## Start
+
+```sh
+docker run -d --name swagguer-ui -p 8888:8888 sjeandeaux/docker-swagger-ui
+```
+
 ## Build
 
 ```sh
