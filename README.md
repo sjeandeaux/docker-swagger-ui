@@ -4,6 +4,9 @@
 
 ```sh
 docker run -d --name swagguer-ui -p 8888:8888 sjeandeaux/docker-swagger-ui
+
+#override API URL
+docker run -d --name swagger-ui -p 8888:8888 -e "API_URL=YOUR_URL" sjeandeaux/docker-swagger-ui
 ```
 
 ## Build
