@@ -5,7 +5,7 @@ RUN npm update npm &&\
 
 
 RUN mkdir -p /tmp/swagger
-ADD https://github.com/swagger-api/swagger-ui/archive/v2.0.24.tar.gz /tmp/swagger/swaggerui.tar.gz
+ADD https://github.com/swagger-api/swagger-ui/archive/master.tar.gz /tmp/swagger/swaggerui.tar.gz
 RUN tar --strip-components 1 -C /tmp/swagger -xzf /tmp/swagger/swaggerui.tar.gz 
 
 RUN mkdir -p /swaggerui/dist/swagger-ui &&\
