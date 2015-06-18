@@ -5,7 +5,7 @@ RUN npm update npm &&\
 
 
 RUN mkdir -p /tmp/swagger
-ADD https://github.com/swagger-api/swagger-ui/archive/master.tar.gz /tmp/swagger/swaggerui.tar.gz
+ADD https://github.com/swagger-api/swagger-ui/archive/v2.1.0.tar.gz /tmp/swagger/swaggerui.tar.gz
 RUN tar --strip-components 1 -C /tmp/swagger -xzf /tmp/swagger/swaggerui.tar.gz 
 
 RUN mkdir -p /swaggerui/dist/swagger-ui &&\
@@ -19,7 +19,6 @@ var path = require('path');\
 var createServer = require('http-server').createServer;\
 var dist = path.join('swaggerui', 'dist');\
 var replace = require('replace');\
-replace({regex: 'http.*api-docs', replacement : process.env.API_URL, paths: ['/swaggerui/dist/swagger-ui/index.html'], recursive:false, silent:true,});\
 replace({regex: 'http.*swagger.json', replacement : process.env.API_URL, paths: ['/swaggerui/dist/swagger-ui/index.html'], recursive:false, silent:true,});\
 var swaggerUI = createServer({ root: dist, cors: true });\
 swaggerUI.listen(8888);" > /swaggerui/index.js
