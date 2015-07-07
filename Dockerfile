@@ -1,5 +1,7 @@
 FROM node:0.10
 
+MAINTAINER Stéphane Jeandeaux <stephane.jeandeaux@gmail.com>
+
 RUN npm update npm &&\
     npm install http-server replace
 
