@@ -22,7 +22,7 @@ var createServer = require('http-server').createServer;\
 var dist = path.join('swaggerui', 'dist');\
 var replace = require('replace');\
 replace({regex: 'http.*swagger.json', replacement : process.env.API_URL, paths: ['/swaggerui/dist/swagger-ui/index.html'], recursive:false, silent:true,});\
-var swaggerUI = createServer({ root: dist, cors: true });\
+var swaggerUI = createServer({ root: dist, cors: true, cache: process.env.CACHE });\
 swaggerUI.listen(8888);" > /swaggerui/index.js
 
 EXPOSE 8888
