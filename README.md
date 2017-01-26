@@ -9,6 +9,9 @@ docker run -d --name swagguer-ui -p 8888:8888 sjeandeaux/docker-swagger-ui
 
 #override API URL
 docker run -d --name swagger-ui -p 8888:8888 -e "API_URL=YOUR_URL" sjeandeaux/docker-swagger-ui
+
+#set cache control headers. default is 3600 seconds, let's set it to 0
+docker run -d --name swagger-ui -p 8888:8888 -e "CACHE=0" sjeandeaux/docker-swagger-ui
 ```
 
 ## Build
